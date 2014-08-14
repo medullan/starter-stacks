@@ -1,0 +1,25 @@
+##
+# This Ansible playbook that intsalls ruby on rails.
+
+- hosts: all
+  sudo: yes
+
+  tasks:
+  - name: update repositories
+    apt: update_cache=yes
+  - name: install curl
+    apt: name=curl state=latest
+  - name: install RVM
+    action: shell curl -L https://get.rvm.io | bash -s stable --ruby
+  - name: load RVM
+    shell: source ~/.rvm/scripts/rvm
+  #- name: install RVM dependencies
+  #  shell: rvm requirements
+  #- name: install RUBY
+  #  shell: rvm install ruby
+  - name: use latest RUBY
+    shell: rvm use ruby --default
+  - name: install RUBY gems
+    shell: rvm rubygems current
+  - name: install RAILS
+    shell: gem install rails

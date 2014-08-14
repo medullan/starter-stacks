@@ -1,0 +1,20 @@
+---
+- hosts: all
+  sudo: yes
+  vars:
+   robot_test_path: robot_test
+   robot_test_repository: https://github.com/medullan/robot-rampage.git
+  tasks:
+  #git installation
+  - name: install git
+    apt: pkg=git state=latest
+  #installation of python and python-setuptools (robot dependencies)
+  - name: install python
+    apt: pkg=python state=latest
+  - name: install python-setuptools
+    apt: pkg=python-setuptools state=latest
+  #installation of robot framework
+  - easy_install: name=robotframework
+  #pull down robot test repository
+  - file: path={{ robot_test_path }} state=touch
+  - git: repo={{ robot_test_repository }} dest={{ robot_test_path }}

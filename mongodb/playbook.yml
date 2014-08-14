@@ -1,0 +1,15 @@
+##
+# Example Ansible playbook that uses the mongoDB module.
+#
+# This installs mongoDB on an Ubuntu system
+
+- hosts: all
+  sudo: yes
+
+  tasks:
+  - name: add mongodb key
+    command: sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+  - name: create mongodb.list
+    command: echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
+  - apt: update_cache=yes
+  - apt: name=mongodb state=latest
