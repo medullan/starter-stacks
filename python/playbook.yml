@@ -1,0 +1,6 @@
+---
+- hosts: all
+  sudo: yes
+  tasks:
+  - name: install python
+    apt: pkg=python state=latest
