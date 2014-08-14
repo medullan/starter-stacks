@@ -1,4 +1,4 @@
-The instructions for running running the mongo vagrant environment are as follows:
+The instructions for running running the robot framework vagrant environment are as follows:
 
 Prerequisites:
 
@@ -8,5 +8,5 @@ Prerequisites:
 
   1. Open a terminal window. Type the following commands:
   2. git clone https://github.com/medullan/starter-stacks.git
-  3. cd mongodb
+  3. cd robot
   4. vagrant up --provison
