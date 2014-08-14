@@ -2,11 +2,11 @@ The instructions for running running the mongo vagrant environment are as follow
  =======
 
 
-h3. Prerequisites:
+ Prerequisites:
 
   * Vagrant - download link [link](https://www.vagrantup.com/downloads.html)
 
-h3. Commands:
+ Commands:
 
   1. Open a terminal window. Type the following commands:
   2. git clone https://github.com/medullan/starter-stacks.git
