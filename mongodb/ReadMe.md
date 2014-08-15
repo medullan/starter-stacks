@@ -15,8 +15,10 @@ Ports:
 
   The mongodb database instance can be accessed from port 27018 on the host machine
 
-MongoDB Credentials:
+MongoDB:
 
   The username and password for the mongodb is as follows:
-    user: mongouser
-    password: password
+    * user: mongouser
+    * password: password
+
+  The database can be accessed from port 27018 on the host vm

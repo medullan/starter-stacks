@@ -27,6 +27,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Create a forwarded port mapping which allows access to a specific port
   # which allows the guest mongodb instance on port 27017 to be access from the host
-  #config.vm.network "forwarded_port", guest: 27017, host: 27018
+  config.vm.network "forwarded_port", guest: 27017, host: 27018
 
 end
