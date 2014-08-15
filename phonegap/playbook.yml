@@ -1,41 +1,33 @@
-##
-# Example Ansible playbook that uses the PostgreSQL module.
-#
-# This installs PostgreSQL on an Ubuntu system, creates a database called
-# "myapp" and a user called "django" with password "mysupersecretpassword"
-# with access to the "myapp" database.
-#
 ---
-- hosts: all
-  sudo: yes
-  gather_facts: no
+-
+  hosts: all
 
   tasks:
-  - name: ensure apt cache is up to date
-    action: apt update_cache=yes
-  - name: ensure packages are installed
-    action: apt name={{item}}
-    with_items:
-        - postgresql
-        - libpq-dev
-        - python-psycopg2
+    -
+      name: apt-get update
+      apt: update_cache=yes cache_valid_time=360000
+      sudo: true
 
-- hosts: all
-  sudo: yes
-  sudo_user: postgres
-  gather_facts: no
-
-  vars:
-    dbname: myapp
-    dbuser: django
-    dbpassword: mysupersecretpassword
-
-  tasks:
-  - name: ensure database is created
-    postgresql_db: name={{dbname}}
-
-  - name: ensure user has access to database
-    postgresql_user: db={{dbname}} name={{dbuser}} password={{dbpassword}} priv=ALL
-
-  - name: ensure user does not have unnecessary privilege
-    postgresql_user: name={{dbuser}} role_attr_flags=NOSUPERUSER,NOCREATEDB
+    -
+      name: Install packages
+      apt: pkg={{ item }} state=installed
+      sudo: true
+      with_items:
+        - git
+        - vim
+    -
+      include: tasks/nvm.yml
+    -
+      { include: tasks/node.yml, node: { version: 0.11.13, setDefault: false } }
+    -
+      { include: tasks/node.yml, node: { version: 0.10.29, setDefault: true } }
+    -
+      include: tasks/npm.yml
+    -
+      include: tasks/rvm.yml
+    -
+      { include: tasks/ruby.yml, ruby: { version: 2.1.2 }}
+    -
+      include: tasks/gems.yml
+    -
+      include: tasks/phonegap.yml

@@ -1,12 +1,21 @@
-The instructions for running running the postgressql vagrant environment are as follows:
+ansible-phonegap-playbook
+=========================
 
-Prerequisites:
+## Start
+Install vagrant and ansible.
+Clone repo
+```
+git clone git@github.com:AlekseyLeshko/ansible-phonegap-playbook.git
+cd ansible-phonegap-playbook/
+```
 
-  * Vagrant - download link https://www.vagrantup.com/downloads.html
+Modificate playbook.yml and
+Run
+```
+vagrant provision
+```
 
- Commands:
-
-  1. Open a terminal window. Type the following commands:
-  2. git clone https://github.com/medullan/starter-stacks.git
-  3. cd postgres
-  4. vagrant up --provison
+Run local
+```
+sudo ansible-playbook playbook.yml --connection=local
+```

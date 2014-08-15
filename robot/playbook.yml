@@ -15,7 +15,15 @@
     easy_install: name=robotframework
   - name: install robotframework
     file: path={{ robot_test_path }} state=touch
+  - name: Install node.js
+    apt: pkg=nodejs state=latest
+  - name: Install phantomjs
+    apt: pkg=phantomjs  state=latest
+  - name: Add firefox repository
+    apt_repository: repo='ppa:ubuntu-mozilla-security/ppa' update_cache=yes
+  - name: install firefox
+    apt: pkg=firefox  state=latest
+  - name: install chromium browser
+    apt: pkg=chromium-browser
   - name: pull down the robot test repository
     git: repo={{ robot_test_repository }} dest={{ robot_test_path }}
-  - name: install nodejs
-    apt: pkg=nodejs state=latest

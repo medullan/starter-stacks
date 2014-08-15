@@ -1,0 +1,10 @@
+-
+  name: Install ruby {{ ruby.version }}
+  command: sudo rvm install {{ ruby.version }}
+  register: rvm_install_result
+  changed_when: "'is already installed.' not in rvm_install_result.stdout"
+
+-
+  name: Set default ruby version to {{ ruby.version }}
+  command: sudo rvm use {{ ruby.version }} --default
+  when: ruby.setDefault
