@@ -1,4 +1,4 @@
-The instructions for running running the java vagrant environment are as follows:
+The instructions for running the java7 vagrant environment are as follows:
 
 Prerequisites:
 
