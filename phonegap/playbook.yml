@@ -5,19 +5,9 @@
   tasks:
     - name: apt-get update
       apt: update_cache=yes
-    - name: Install packages
-      apt: pkg={{ item }} state=installed
-      with_items:
-        - git
-        - vim
-    - name: install node and npm
-      apt: pkg={{ item }} state=latest
-      with_items:
-        - nodejs
-        - npm
-    - name: configure npm ssl to be false
-      shell: sudo npm config set strict-ssl false
-    - name: set registry
-      command: npm config set registry http://registry.npmjs.org/
+    - name: setup node
+      shell: curl -sL https://deb.nodesource.com/setup | sudo bash -
+    - name: install node
+      apt: pkg=nodejs state=latest
     - name: install phonegap
       shell: sudo npm install -gf phonegap
