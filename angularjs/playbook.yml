@@ -12,5 +12,5 @@
     shell: curl -sL https://deb.nodesource.com/setup | sudo bash -
   - name: install node
     apt: pkg=nodejs state=latest
-  - name: install dependencies angular-seed dependencies
+  - name: install angular-seed dependencies
     command: chdir=./checkout npm install
