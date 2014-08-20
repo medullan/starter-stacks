@@ -1,33 +1,23 @@
 ---
 -
   hosts: all
-
+  sudo: true
   tasks:
-    -
-      name: apt-get update
-      apt: update_cache=yes cache_valid_time=360000
-      sudo: true
-
-    -
-      name: Install packages
+    - name: apt-get update
+      apt: update_cache=yes
+    - name: Install packages
       apt: pkg={{ item }} state=installed
-      sudo: true
       with_items:
         - git
         - vim
-    -
-      include: tasks/nvm.yml
-    -
-      { include: tasks/node.yml, node: { version: 0.11.13, setDefault: false } }
-    -
-      { include: tasks/node.yml, node: { version: 0.10.29, setDefault: true } }
-    -
-      include: tasks/npm.yml
-    -
-      include: tasks/rvm.yml
-    -
-      { include: tasks/ruby.yml, ruby: { version: 2.1.2 }}
-    -
-      include: tasks/gems.yml
-    -
-      include: tasks/phonegap.yml
+    - name: install node and npm
+      apt: pkg={{ item }} state=latest
+      with_items:
+        - nodejs
+        - npm
+    - name: configure npm ssl to be false
+      shell: sudo npm config set strict-ssl false
+    - name: set registry
+      command: npm config set registry http://registry.npmjs.org/
+    - name: install phonegap
+      shell: sudo npm install -gf phonegap

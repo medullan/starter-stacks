@@ -1,0 +1,16 @@
+---
+- hosts: all
+  sudo: yes
+  tasks:
+  - name: update cache
+    apt: update_cache=yes
+  - name: Install git
+    apt: pkg=git state=latest
+  - name: clone angular seed repo
+    git: repo=https://github.com/angular/angular-seed.git dest=./checkout
+  - name: setup node
+    shell: curl -sL https://deb.nodesource.com/setup | sudo bash -
+  - name: install node
+    apt: pkg=nodejs state=latest
+  - name: install dependencies npm
+    command: chdir=./checkout npm install
