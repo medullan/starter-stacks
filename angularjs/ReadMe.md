@@ -1,18 +1,27 @@
-The instructions for running the angular vagrant environment are as follows:
+Java Vagrant Box
+=======================
 
-Prerequisites:
 
-  * Vagrant - download link https://www.vagrantup.com/downloads.html
+This vagrant box is provisioned by ansible with the angularjs environment
 
-Overview:
+----------
 
- This vagrant box utilizes the ansible provisioner to download the angular seed project
- from the https://github.com/angular/angular-seed. The seed dependencies are then installed
- utilizing node.
 
- Commands:
+Prerequisites
+-------------
+> **You will need:**
 
-  1. Open a terminal window. Type the following commands:
-  2. git clone https://github.com/medullan/starter-stacks.git
-  3. cd java
-  4. vagrant up --provison
+> - Vagrant - for vagrant installation instructions click [here](https://docs.vagrantup.com/v2/installation/)
+> - Ansible - for ansible installation instructions click [here](http://docs.ansible.com/intro_installation.html#installation)
+
+How To Run
+-------------
+> **The steps to initialize the angularjs vagrant box is as follows:**
+
+  1. Open a terminal window.
+  2. **git clone** https://github.com/medullan/starter-stacks.git
+  3. **cd** starter-statcks
+  4. **cd** angularjs
+  5. **vagrant up**
+
+----------
