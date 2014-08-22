@@ -1,21 +1,27 @@
-ansible-phonegap-playbook
-=========================
+Phonegap Vagrant Box
+=======================
 
-## Start
-Install vagrant and ansible.
-Clone repo
-```
-git clone git@github.com:AlekseyLeshko/ansible-phonegap-playbook.git
-cd ansible-phonegap-playbook/
-```
 
-Modificate playbook.yml and
-Run
-```
-vagrant provision
-```
+This vagrant box is provisioned by ansible with the Phonegap environment
 
-Run local
-```
-sudo ansible-playbook playbook.yml --connection=local
-```
+----------
+
+
+Prerequisites
+-------------
+> **You will need:**
+
+> - Vagrant - for vagrant installation instructions click [here](https://docs.vagrantup.com/v2/installation/)
+> - Ansible - for ansible installation instructions click [here](http://docs.ansible.com/intro_installation.html#installation)
+
+How To Run
+-------------
+> **The steps to initialize the Phonegap vagrant box is as follows:**
+
+  1. Open a terminal window.
+  2. **git clone** https://github.com/medullan/starter-stacks.git
+  3. **cd** starter-statcks
+  4. **cd** phonegap
+  5. **vagrant up**
+
+----------

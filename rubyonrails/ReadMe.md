@@ -21,7 +21,7 @@ How To Run
   1. Open a terminal window.
   2. **git clone** https://github.com/medullan/starter-stacks.git
   3. **cd** starter-statcks
-  4. **cd** ruby on raills
+  4. **cd** rubyonraills
   5. **vagrant up**
 
 ----------

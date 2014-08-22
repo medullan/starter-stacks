@@ -1,24 +1,40 @@
-The instructions for running running the mongo vagrant environment are as follows:
+Java Vagrant Box
+=======================
 
-Prerequisites:
 
-  * Vagrant - download link https://www.vagrantup.com/downloads.html
+This vagrant box is provisioned by ansible with the java environment
 
-Commands:
+----------
 
-  1. Open a terminal window. Type the following commands:
-  2. git clone https://github.com/medullan/starter-stacks.git
-  3. cd mongodb
-  4. vagrant up --provison
+
+Prerequisites
+-------------
+> **You will need:**
+
+> - Vagrant - for vagrant installation instructions click [here](https://docs.vagrantup.com/v2/installation/)
+> - Ansible - for ansible installation instructions click [here](http://docs.ansible.com/intro_installation.html#installation)
+
+How To Run
+-------------
+> **The steps to initialize the java vagrant box is as follows:**
+
+  1. Open a terminal window.
+  2. **git clone** https://github.com/medullan/starter-stacks.git
+  3. **cd** starter-statcks
+  4. **cd** java
+  5. **vagrant up**
+
+----------
 
 Ports:
+-------------
+  * The mongodb database instance can be accessed from port 27018 on the host machine
 
-  The mongodb database instance can be accessed from port 27018 on the host machine
+MongoDB Credentials:
+-------------
+The username and password for the mongodb is as follows:
 
-MongoDB:
+ - **user**: mongouser
+ -  **password**: password
 
-  The username and password for the mongodb is as follows:
-    * user: mongouser
-    * password: password
-
-  The database can be accessed from port 27018 on the host vm
+----------

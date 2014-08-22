@@ -1,4 +1,4 @@
-Java Vagrant Box
+Angularjs Vagrant Box
 =======================
 
 
