@@ -9,5 +9,8 @@
       shell: curl -sL https://deb.nodesource.com/setup | sudo bash -
     - name: install node
       apt: pkg=nodejs state=latest
-    - name: install phonegap
-      shell: sudo npm install -gf phonegap
+    - name: install phonegap and yoman
+      npm: name={{ item }} global=yes
+      with_items:
+        - phonegap
+        - generator-angular-phonegap
