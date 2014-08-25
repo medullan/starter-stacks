@@ -23,11 +23,12 @@ How To Run
   3. **cd** starter-statcks
   4. **cd** gatling
   5. **vagrant up**
+
 ----------
 
 Running gatlin
 -------------
-> **All gatling source files are stored in the **gatlin** directory.
-> **For more information on how to use gatling click [here](http://gatling.io/docs/1.5.6/user_documentation/tutorial/first_steps_with_gatling.html) 
+> - All gatling source files are stored in the **gatlin** directory
+> - For more information on how to use gatling click [here](http://gatling.io/docs/1.5.6/user_documentation/tutorial/first_steps_with_gatling.html)
 
 ----------
