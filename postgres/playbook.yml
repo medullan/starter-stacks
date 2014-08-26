@@ -19,6 +19,9 @@
         - postgresql
         - libpq-dev
         - python-psycopg2
+  - name: Install git
+    apt: pkg=git state=latest
+
 
 - hosts: all
   sudo: yes
@@ -31,9 +34,6 @@
     dbpassword: mysupersecretpassword
 
   tasks:
-  - name: Install git
-    apt: pkg=git state=latest
-
   - name: ensure database is created
     postgresql_db: name={{dbname}}
 
