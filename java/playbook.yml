@@ -2,6 +2,8 @@
 - hosts: all
   sudo: yes
   tasks:
+  - name: install git
+    apt: pkg=git state=latest
   - name: Add java repositories
     apt_repository: repo='ppa:webupd8team/java' update_cache=yes
   - name: Shell accepted oracle license

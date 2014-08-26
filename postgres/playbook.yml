@@ -31,6 +31,9 @@
     dbpassword: mysupersecretpassword
 
   tasks:
+  - name: Install git
+    apt: pkg=git state=latest
+
   - name: ensure database is created
     postgresql_db: name={{dbname}}
 

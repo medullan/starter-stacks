@@ -1,8 +1,8 @@
-Java Vagrant Box
+MongoDB Vagrant Box
 =======================
 
 
-This vagrant box is provisioned by ansible with the java environment
+This vagrant box is provisioned by docker with the MongoDB environment
 
 ----------
 
@@ -21,7 +21,7 @@ How To Run
   1. Open a terminal window.
   2. **git clone** https://github.com/medullan/starter-stacks.git
   3. **cd** starter-statcks
-  4. **cd** java
+  4. **cd** mongodb
   5. **vagrant up**
 
 ----------
@@ -35,6 +35,6 @@ MongoDB Credentials:
 The username and password for the mongodb is as follows:
 
  - **user**: mongouser
- -  **password**: password
+ - **password**: password
 
 ----------

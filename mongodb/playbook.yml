@@ -4,5 +4,3 @@
   tasks:
   - name: Install git
     apt: pkg=git state=latest
-  - name: install python
-    apt: pkg=python state=latest

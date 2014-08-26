@@ -1,4 +1,4 @@
-postgres Vagrant Box
+Postgres Vagrant Box
 =======================
 
 

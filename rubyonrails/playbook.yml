@@ -10,6 +10,8 @@
     apt: update_cache=yes
   - name: install curl
     apt: name=curl state=latest
+  - name: Install git
+    apt: pkg=git state=latest
   - name: install ruby dependencies
     apt:  pkg={{ item }} state=latest
     with_items:

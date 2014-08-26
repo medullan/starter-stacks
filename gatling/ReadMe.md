@@ -2,7 +2,7 @@ Gatling Vagrant Box
 =======================
 
 
-This vagrant box is provisioned by ansible with the gatlin load testing tool
+This vagrant box is provisioned by ansible with the gatling load testing tool
 
 ----------
 

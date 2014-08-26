@@ -1,12 +1,27 @@
-The instructions for running running the python vagrant environment are as follows:
+Python Vagrant Box
+=======================
 
-Prerequisites:
 
-  * Vagrant - download link https://www.vagrantup.com/downloads.html
+This vagrant box is provisioned by ansible with the python environment
 
- Commands:
+----------
 
-  1. Open a terminal window. Type the following commands:
-  2. git clone https://github.com/medullan/starter-stacks.git
-  3. cd python
-  4. vagrant up --provison
+
+Prerequisites
+-------------
+> **You will need:**
+
+> - Vagrant - for vagrant installation instructions click [here](https://docs.vagrantup.com/v2/installation/)
+> - Ansible - for ansible installation instructions click [here](http://docs.ansible.com/intro_installation.html#installation)
+
+How To Run
+-------------
+> **The steps to initialize the python vagrant box is as follows:**
+
+  1. Open a terminal window.
+  2. **git clone** https://github.com/medullan/starter-stacks.git
+  3. **cd** starter-statcks
+  4. **cd** python
+  5. **vagrant up**
+
+----------
