@@ -1,0 +1,6 @@
+---
+- hosts: all
+  sudo: yes
+  tasks:
+  - name: Install git
+    apt: pkg=git state=latest

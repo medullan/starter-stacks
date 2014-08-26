@@ -1,0 +1,32 @@
+##
+# This Ansible playbook that intsalls ruby on rails.
+
+- hosts: all
+  sudo: yes
+  vars:
+    ruby_version: 2.0.0
+  tasks:
+  - name: update repositories
+    apt: update_cache=yes
+  - name: install curl
+    apt: name=curl state=latest
+  - name: Install git
+    apt: pkg=git state=latest
+  - name: install ruby dependencies
+    apt:  pkg={{ item }} state=latest
+    with_items:
+      - libgdbm-dev
+      - libncurses5-dev
+      - automake
+      - libtool
+      - bison
+      - libffi-dev
+  - name: run source
+    sudo: no
+    script: bash_profile.sh
+  - name: add rvm to bashrc
+    shell: echo "source ~/.rvm/scripts/rvm" >> ~/.bashrc
+  - name: install ruby
+    shell: executable=/bin/bash source /etc/profile.d/rvm.sh;rvm install {{ ruby_version }}
+  - name: Set default ruby version
+    shell: executable=/bin/bash source /etc/profile.d/rvm.sh;rvm use {{ ruby_version }}

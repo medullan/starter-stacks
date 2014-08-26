@@ -1,0 +1,3 @@
+-
+  name: Install phonegap
+  command: sudo npm install -g phonegap

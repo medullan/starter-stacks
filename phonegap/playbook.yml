@@ -1,0 +1,16 @@
+---
+-
+  hosts: all
+  sudo: true
+  tasks:
+    - name: apt-get update
+      apt: update_cache=yes
+    - name: setup node
+      shell: curl -sL https://deb.nodesource.com/setup | sudo bash -
+    - name: install node
+      apt: pkg=nodejs state=latest
+    - name: install phonegap and yoman
+      npm: name={{ item }} global=yes
+      with_items:
+        - phonegap
+        - generator-angular-phonegap

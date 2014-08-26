@@ -1,0 +1,12 @@
+-
+  name: Install packages
+  apt: pkg={{ item }} state=installed
+  sudo: true
+  with_items:
+    - curl
+    - build-essential
+    - libssl-dev
+
+-
+  name: Download and install nvm
+  shell: curl https://raw.githubusercontent.com/creationix/nvm/v0.7.0/install.sh | sh
