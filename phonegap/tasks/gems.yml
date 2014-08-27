@@ -1,5 +1,0 @@
--
-  name: Install gems
-  command: sudo gem install {{ item }}
-  with_items:
-    - slim
