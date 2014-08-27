@@ -1,0 +1,38 @@
+---
+- hosts: all
+  sudo: yes
+  vars:
+    home:
+  tasks:
+  - name: Add java repositories
+    apt_repository: repo='ppa:webupd8team/java'
+  - name: Update the Package Index
+    apt: update_cache=yes
+  - name: Shell accept oracle license
+    shell: echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
+  - name: Install java7
+    apt: pkg=oracle-java7-installer state=latest
+  - name: Install curl
+    apt: pkg=curl
+#  - name: enable multiarch
+#    command: dpkg --foreign-architecture i386
+  - name: install deps
+    apt: name={{ item }} update_cache=yes cache_valid_time=3600
+    with_items:
+      - gradle
+      - "libstdc++6:i386"
+      - "libgcc1:i386"
+      - "zlib1g:i386"
+      - "libncurses5:i386"
+  - name: cleanup old sdk
+    command: rm -rf {{ home }}/opt/android-sdk-linux
+  - name: download android sdk
+    get_url: url=http://dl.google.com/android/android-sdk_r23.0.2-linux.tgz dest={{ home }}/tmp/android-sdk.tgz
+  - name: create {{ home }}/opt
+    command: /bin/mkdir -p {{ home }}/opt
+  - name: unpack android sdk
+    command: tar xvf {{ home }}/tmp/android-sdk.tgz --directory {{ home }}/opt --exclude android-sdk-linux/docs
+  - name: remove archive
+    command: rm {{ home }}/tmp/android-sdk.tgz
+  - name: install sdk
+    shell: "echo yes | {{ home }}/opt/android-sdk-linux/tools/android update sdk -u --filter android-19,platform-tools,build-tools-20.0.0"
