@@ -10,7 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "ubuntu/precise64"
+  config.vm.box = "ubuntu/trusty64"
 
   config.vm.provision "ansible" do |ansible|
         ansible.playbook = "playbook.yml"
@@ -21,7 +21,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #  images: ["dockerfile/mongodb"]
 
   config.vm.provision "docker" do |d|
-    d.build_image ".", args: "-t ubuntu/mongodb"
+    d.build_image "./", args: "-t ubuntu/mongodb"
   end
 
   #Run mongodb
