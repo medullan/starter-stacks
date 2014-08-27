@@ -32,15 +32,16 @@ How To Access the VM
 
   * vagrant rdp
   * The windows environment (GUI) should then be displayed after executing this command
-  * How To Access the VM
+
+How To Access the VM
 -------------
 > **To access the remote desktop protocol(RDP) has to be used. This is done by typing:**
 
   * **vagrant rdp**
-  * The windows environment (GUI) should then be displayed after executing this command
-  * In some instances the rdp client may fail to connect. If this occurs you will have to launch the
-    windows7 vm from virtual box  and "allow desktop connection", click [here](http://windows.microsoft.com/en-us/windows7/allow-remote-desktop-connections-from-outside-your-home-network)
+  * The windows environment (GUI) should then be displayed after executing this command.
+
+Know Issues
+-------------
+  * In some instances the **rdp client** may fail to connect. If this occurs you will have to launch the
+    windows7 vm from virtual box  and allow remote desktop connections. Click [here](http://windows.microsoft.com/en-us/windows7/allow-remote-desktop-connections-from-outside-your-home-network)
     to find out how to allow a remote desktop connection on windows 7
-
-
-----------
